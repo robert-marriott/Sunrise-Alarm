@@ -26,7 +26,7 @@ var router = express.Router();              // get an instance of the express Ro
 // middleware to use for all requests
 router.use(function(req, res, next) {
     // do logging
-    console.log('Something is happening.');
+    console.log('Request made to server at: '+Date.now());
     next(); // make sure we go to the next routes and don't stop here
 });
 
@@ -34,10 +34,12 @@ router.use(function(req, res, next) {
 router.route('/alarms')
 .post(function(req, res) {
     var alarm = new Alarm();      // create a new instance of the Alarm model
-    alarm.title = req.body.title;  // set the alarm name (comes from the request (from body)
-    //req.param
-    //more .'s for each field
-    // save the alarm and check for errors
+    alarm.title = req.body.title;  // set the alarm name (comes from the request (from params (instead of body))
+    alarm.creator = req.body.creator;
+    alarm.alarm_duration = req.body.alarm_duration;
+    alarm.comment = req.body.comment;
+    alarm.alarm_time = req.body.alarm_time;
+
     alarm.save(function(err) {
         if (err)
             res.send(err);
@@ -70,7 +72,11 @@ router.route('/alarms/:alarm_id')
         Alarm.findById(req.params.alarm_id, function(err, alarm) {
             if (err)
                 res.send(err);
-            alarm.title = req.body.title;  // update the alarm's info
+            alarm.title = req.body.title;  // set the alarm name (comes from the request (from params (instead of body))
+            alarm.creator = req.body.creator;
+            alarm.alarm_duration = req.body.alarm_duration;
+            alarm.comment = req.body.comment;
+            alarm.alarm_time = req.body.alarm_time;  // update the alarm's info
             // save the alarm
             alarm.save(function(err) {
                 if (err)
