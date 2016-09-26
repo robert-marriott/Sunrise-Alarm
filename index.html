@@ -23,6 +23,10 @@
     <link href="public/src/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
+    <!-- Javascript Libraries -->
+    <script src="public/src/javascript/jquery.js"></script> <!-- jQuery -->
+    <script src="public/src/javascript/bootstrap.min.js"></script> <!-- Bootstrap Core JavaScript -->
+
     <!-- Javascript controllers and logic -->
     <script src="public/src/javascript/alarm-controller.js" type="text/javascript"></script>
     <script src="public/src/javascript/sunrise.js" type="text/javascript"></script>
@@ -105,7 +109,7 @@
                                     <strong>Add Alarm</strong>
                                 </h4>
                                 <p>Adds an alarm to the attached database.</p>
-                                <a href="#setalarm" class="btn btn-light" data-toggle="collapse"> - Create - </a>
+                                <a href="#set_alarm" class="btn btn-light" data-toggle="collapse"> - Create - </a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -118,7 +122,7 @@
                                     <strong>Choose Alarm</strong>
                                 </h4>
                                 <p>Choose from a list of all created "Alarm Scenarios".</p>
-                                <a href="#" class="btn btn-light"> - Choose - </a>
+                                <a href="#list_alarms" class="btn btn-light"> - Choose - </a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -131,7 +135,7 @@
                                     <strong>Choose Color Scheme</strong>
                                 </h4>
                                 <p>Each alarm can run through a color rotation schema.</p>
-                                <a href="#" class="btn btn-light">- Decorate -</a>
+                                <a href="#choose_color" class="btn btn-light">- Decorate -</a>
                             </div>
                         </div>
                        <div class="col-md-3 col-sm-6">
@@ -144,7 +148,7 @@
                                     <strong>Manual Control</strong>
                                 </h4>
                                 <p>Robots are scary. This is for manual control. Take the wheel!</p>
-                                <a href="#" class="btn btn-light"> -   Drive   - </a>
+                                <a href="#manual_sunrise" class="btn btn-light"> -   Drive   - </a>
                             </div>
                         </div>
                     </div>
@@ -156,53 +160,57 @@
         </div>
         <!-- /.container -->
     </section>
-
+<!--------------------------- Form Data and Functional Webpage Parts -------------------------->
 <!-- Div for alarm setting, service 1/4. Expands on button click. Bootstrap/CSS/HTML-->
-    <div id="setalarm" class="form-alarm-entry collapse">
+    <div id="set_alarm" class="form-alarm-entry collapse">
         <h1>Enter Alarm Details<span>Populate the form and send to the database!</span></h1>
-        <form>
+        <form name="makeAlarm" id="makeAlarm">
             <div class="section"><span>1</span>Alarm Title &amp; Creator</div>
             <div class="inner-wrap">
-                <label>What shall we call this alarm? <input type="text" name="title" /></label>
-                <label>Who is creating this alarm? <input type="text" name="creator" /></label>
+                <label>What shall we call this alarm? <input type="text" id="al_name" name="title" /></label>
+                <label>Who is creating this alarm? <input type="text" id="al_creator" name="creator" /></label>
             </div>
 
             <div class="section"><span>2</span>Alarm Time &amp; Duration</div>
             <div class="inner-wrap">
-                <label>Alarm Time <input type="time" name="alarmtime" /></label>
-                <label>Alarm Fade Duration <input type="number" name="alarmduration" /></label>
+                <label>Alarm Time <input type="time" id="al_time" name="alarm_time" /></label>
+                <label>Alarm Fade Duration <input type="number" id="al_duration" name="alarm_duration" /></label>
             </div>
-
             <div class="section"><span>3</span>Repeats</div>
             <div class="inner-wrap">
                 <div class="weekDays-selector">
-                    <input type="checkbox" id="weekday-sun" class="weekday"/>
+                    <input type="checkbox" id="weekday-sun" class="weekday" name="sun" value="true"/>
                     <label for="weekday-sun">Sun</label>
-                    <input type="checkbox" id="weekday-mon" class="weekday"/>
+                    <input type="checkbox" id="weekday-mon" class="weekday" name="mon"  value="true"/>
                     <label for="weekday-mon">Mon</label>
-                    <input type="checkbox" id="weekday-tue" class="weekday"/>
+                    <input type="checkbox" id="weekday-tue" class="weekday" name="tue"  value="true"/>
                     <label for="weekday-tue">Tue</label>
-                    <input type="checkbox" id="weekday-wed" class="weekday"/>
+                    <input type="checkbox" id="weekday-wed" class="weekday" name="wed"  value="true"/>
                     <label for="weekday-wed">Wed</label>
-                    <input type="checkbox" id="weekday-thu" class="weekday"/>
+                    <input type="checkbox" id="weekday-thu" class="weekday" name="thu"  value="true"/>
                     <label for="weekday-thu">Thu</label>
-                    <input type="checkbox" id="weekday-fri" class="weekday"/>
+                    <input type="checkbox" id="weekday-fri" class="weekday" name="fri"  value="true"/>
                     <label for="weekday-fri">Fri</label>
-                    <input type="checkbox" id="weekday-sat" class="weekday"/>
+                    <input type="checkbox" id="weekday-sat" class="weekday" name="sat"  value="true"/>
                     <label for="weekday-sat">Sat</label>
                 </div>
             </div>
             <div class="button-section">
-                <input type="submit" name="MakeAlarm" />
+                <button type="button" name="MakeAlarm" onclick="createAlarmFromHTML()">Add Alarm!</button>
             </div>
         </form>
     </div>
-<!-- <br>
-    <div class="alarm-square" id="service1">Placeholder for service 1</div>
-    <div id="service2">Placeholder for service 2</div>
-    <div id="service3">Placeholder for service 3</div>
-    <div id="service4">Placeholder for service 4</div>
--->
+
+<!-- Div for listing all available alarms and choosing one -->
+    <div id="list_alarms" class="form-alarm-list"></div>
+
+<!--Div for Creating/Choosing a Color Scheme -->
+    <div id="choose_color" class="form-choose-color"></div>
+
+<!--Div for Creating/Choosing a Color Scheme -->
+    <div id="manual_sunrise" class="form-manual-sunrise"></div>
+
+<!--------------------------- Form Data and Functional Webpage Parts -------------------------->
 
     <!-- Callout
     <aside class="callout">
@@ -304,12 +312,6 @@
         </div>
         <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </footer>
-
-    <!-- jQuery -->
-    <script src="public/src/javascript/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="public/src/javascript/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script>

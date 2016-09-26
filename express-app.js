@@ -27,6 +27,7 @@ var router = express.Router();              // get an instance of the express Ro
 router.use(function(req, res, next) {
     // do logging
     console.log('Request made to server at: '+Date.now());
+    console.log('Request was: '+req.toString());
     next(); // make sure we go to the next routes and don't stop here
 });
 
