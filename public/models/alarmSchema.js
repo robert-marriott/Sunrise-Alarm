@@ -43,6 +43,6 @@ alarmSchema.pre('save', function(next) {
 
 /***********Exports for allowing this schema to be used by mongodb ***********/
 // the schema is useless so far we need to create a model using it
-var User = mongoose.model('Alarm', alarmSchema);
+var Alarm = mongoose.model('Alarm', alarmSchema);
 // make this available to our users in our Node applications
 module.exports = Alarm;

@@ -8,7 +8,7 @@ var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-var Alarm     = require('./app/models/alarmSchema.js');
+var Alarm     = require('./public/models/alarmSchema.js');
 
 // Database
 mongoose.connect('mongodb://localhost/sunrise_database');
