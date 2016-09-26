@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="public/src/css/stylish-portfolio.css" rel="stylesheet">
+    <link href="public/src/css/forms-custom.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="public/src/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -58,8 +59,13 @@
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
+<<<<<<< HEAD
+            <h1>Sunrise Alarm Clock</h1>
+            <h3>Wake up on your own terms</h3>
+=======
             <h1 style="color:darkgrey">Sunrise Alarm Clock</h1>
             <h3 style="color:darkgrey">Wake up easy ;)</h3>
+>>>>>>> master
             <br>
             <a href="#about" class="btn btn-dark btn-lg">More about this app</a>
         </div>
@@ -71,7 +77,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Sunrise Alarm clock is a MEAN stack web application to ease the morning blues.</h2>
-                    <p class="lead">It is written primarily in Javascript, CSS, and HTML.</p>
+                    <p class="lead">Connect it to your favorite LED light creations and see the sunrise!</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -79,7 +85,7 @@
         <!-- /.container -->
     </section>
 
-    <!-- Services -->
+    <!-- Alarm Functions -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
     <section id="services" class="services bg-primary">
         <div class="container">
@@ -98,7 +104,7 @@
                                     <strong>Add Alarm</strong>
                                 </h4>
                                 <p>Adds an alarm to the attached database.</p>
-                                <a href="#" class="btn btn-light"> - Create - </a>
+                                <a href="#setalarm" class="btn btn-light" data-toggle="collapse"> - Create - </a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -150,14 +156,55 @@
         <!-- /.container -->
     </section>
 
-    <!-- Callout -->
+<!-- Div for alarm setting, service 1/4. Expands on button click. Bootstrap/CSS/HTML-->
+    <div id="setalarm" class="form-alarm-entry collapse">
+        <h1>Enter Alarm Details<span>Populate the form and send to the database!</span></h1>
+        <form>
+            <div class="section"><span>1</span>Alarm Title &amp; Creator</div>
+            <div class="inner-wrap">
+                <label>What shall we call this alarm? <input type="text" name="title" /></label>
+                <label>Who is creating this alarm? <input type="text" name="creator" /></label>
+            </div>
+
+            <div class="section"><span>2</span>Alarm Time &amp; Duration</div>
+            <div class="inner-wrap">
+                <label>Alarm Time <input type="time" name="alarmtime" /></label>
+                <label>Alarm Fade Duration <input type="number" name="alarmduration" /></label>
+            </div>
+
+            <div class="section"><span>3</span>Repeats</div>
+            <div class="inner-wrap">
+                <div class="weekDays-selector">
+                    <input type="checkbox" id="weekday-sun" class="weekday" />
+                    <label for="weekday-sun">Sun</label>
+                    <input type="checkbox" id="weekday-mon" class="weekday" />
+                    <label for="weekday-mon">Mon</label>
+                    <input type="checkbox" id="weekday-tue" class="weekday" />
+                    <label for="weekday-tue">Tue</label>
+                    <input type="checkbox" id="weekday-wed" class="weekday" />
+                    <label for="weekday-wed">Wed</label>
+                    <input type="checkbox" id="weekday-thu" class="weekday" />
+                    <label for="weekday-thu">Thu</label>
+                    <input type="checkbox" id="weekday-fri" class="weekday" />
+                    <label for="weekday-fri">Fri</label>
+                    <input type="checkbox" id="weekday-sat" class="weekday" />
+                    <label for="weekday-sat">Sat</label>
+                </div>
+            </div>
+            <div class="button-section">
+                <input type="submit" name="Make Alarm" />
+            </div>
+        </form>
+    </div>
+
+    <!-- Callout
     <aside class="callout">
         <div class="text-vertical-center">
             <h1>Current Settings</h1>
         </div>
-    </aside>
+    </aside>  -->
 
-    <!-- Portfolio -->
+    <!-- Portfolio
     <section id="projects" class="portfolio">
         <div class="container">
             <div class="row">
@@ -194,17 +241,17 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /.row (nested) -->
+                    <!-- /.row (nested) commentedout!!
                     <a href="#" class="btn btn-dark">View More Items</a>
                 </div>
-                <!-- /.col-lg-10 -->
+                <!-- /.col-lg-10 commentedout!!
             </div>
-            <!-- /.row -->
+            <!-- /.row commentedout!!
         </div>
-        <!-- /.container -->
-    </section>
+        <!-- /.container commendtedout!!
+    </section> -->
 
-    <!-- Call to Action -->
+    <!-- Call to Action
     <aside class="call-to-action bg-primary">
         <div class="container">
             <div class="row">
@@ -215,7 +262,7 @@
                 </div>
             </div>
         </div>
-    </aside>
+    </aside> -->
 
 
     <footer>
