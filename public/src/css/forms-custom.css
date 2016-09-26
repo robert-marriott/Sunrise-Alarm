@@ -20,7 +20,7 @@
     margin-bottom: 15px;
 }
 .form-alarm-entry h1{
-    background: #2A88AD;
+    background: #337ab7;
     padding: 20px 30px 15px 30px;
     margin: -30px -30px 30px -30px;
     border-radius: 10px 10px 0 0;
@@ -73,11 +73,11 @@
 
 .form-alarm-entry .section{
     font: normal 20px 'Bitter', serif;
-    color: #2A88AD;
+    color: #337ab7;
     margin-bottom: 5px;
 }
 .form-alarm-entry .section span {
-    background: #2A88AD;
+    background: #337ab7;
     padding: 5px 10px 5px 10px;
     position: absolute;
     border-radius: 50%;
@@ -91,7 +91,7 @@
 }
 .form-alarm-entry input[type="button"],
 .form-alarm-entry input[type="submit"]{
-    background: #2A88AD;
+    background: #337ab7;
     padding: 8px 20px 8px 20px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -138,6 +138,6 @@
 }
 
 .weekDays-selector input[type=checkbox]:checked + label {
-    background: #2AD705;
+    background: #337ab7;
     color: #ffffff;
 }
