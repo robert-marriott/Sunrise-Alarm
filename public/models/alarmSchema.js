@@ -8,7 +8,7 @@ var alarmSchema = new Schema({
   creator: String,
   alarmtime: String,
   alarmduration: Number,
-  stats: Array,
+  comments: String,
   repeat: {
     mon: Boolean,
     tue: Boolean,
