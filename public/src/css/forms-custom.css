@@ -1,5 +1,6 @@
+/*CSS for Webpage form functions*/
 
-
+/*Alarm Entry CSS - toggled on button click*/
 .form-alarm-entry{
     width:450px;
     padding:30px;
@@ -118,4 +119,25 @@
     color: #4D4D4D;
     margin-top: 10px;
     text-align: right;
+}
+/* Weekday Selector CSS for Alarm Creation section*/
+.weekDays-selector input {
+    display: none!important;
+}
+
+.weekDays-selector input[type=checkbox] + label {
+    display: inline-block;
+    border-radius: 6px;
+    background: #dddddd;
+    height: 40px;
+    width: 30px;
+    margin-right: 3px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.weekDays-selector input[type=checkbox]:checked + label {
+    background: #2AD705;
+    color: #ffffff;
 }

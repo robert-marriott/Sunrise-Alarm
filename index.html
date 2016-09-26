@@ -17,7 +17,7 @@
     <!-- Custom CSS -->
     <link href="public/src/css/stylish-portfolio.css" rel="stylesheet">
     <link href="public/src/css/forms-custom.css" rel="stylesheet">
-    
+
     <!-- Custom Fonts -->
     <link href="public/src/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
@@ -99,7 +99,7 @@
                                     <strong>Add Alarm</strong>
                                 </h4>
                                 <p>Adds an alarm to the attached database.</p>
-                                <a href="#" class="btn btn-light"> - Create - </a>
+                                <a href="#setalarm" class="btn btn-light" data-toggle="collapse"> - Create - </a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -150,6 +150,47 @@
         </div>
         <!-- /.container -->
     </section>
+
+<!-- Div for alarm setting, service 1/4. Expands on button click. Bootstrap/CSS/HTML-->
+    <div id="setalarm" class="form-alarm-entry collapse">
+        <h1>Enter Alarm Details<span>Populate the form and send to the database!</span></h1>
+        <form>
+            <div class="section"><span>1</span>Alarm Title &amp; Creator</div>
+            <div class="inner-wrap">
+                <label>What shall we call this alarm? <input type="text" name="title" /></label>
+                <label>Who is creating this alarm? <input type="text" name="creator" /></label>
+            </div>
+
+            <div class="section"><span>2</span>Alarm Time &amp; Duration</div>
+            <div class="inner-wrap">
+                <label>Alarm Time <input type="time" name="alarmtime" /></label>
+                <label>Alarm Fade Duration <input type="number" name="alarmduration" /></label>
+            </div>
+
+            <div class="section"><span>3</span>Repeats</div>
+            <div class="inner-wrap">
+                <div class="weekDays-selector">
+                    <input type="checkbox" id="weekday-sun" class="weekday" />
+                    <label for="weekday-sun">Sun</label>
+                    <input type="checkbox" id="weekday-mon" class="weekday" />
+                    <label for="weekday-mon">Mon</label>
+                    <input type="checkbox" id="weekday-tue" class="weekday" />
+                    <label for="weekday-tue">Tue</label>
+                    <input type="checkbox" id="weekday-wed" class="weekday" />
+                    <label for="weekday-wed">Wed</label>
+                    <input type="checkbox" id="weekday-thu" class="weekday" />
+                    <label for="weekday-thu">Thu</label>
+                    <input type="checkbox" id="weekday-fri" class="weekday" />
+                    <label for="weekday-fri">Fri</label>
+                    <input type="checkbox" id="weekday-sat" class="weekday" />
+                    <label for="weekday-sat">Sat</label>
+                </div>
+            </div>
+            <div class="button-section">
+                <input type="submit" name="Make Alarm" />
+            </div>
+        </form>
+    </div>
 
     <!-- Callout
     <aside class="callout">
