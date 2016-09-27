@@ -9,16 +9,24 @@
 
 $( document ).ready(function() {
     console.log( "document is ready!" );
+
+
 });
 
 
 
 
-function createAlarmFromHTML(){
-console.log("Button clicked");
+function createAlarmFromHTML() {
+    console.log("Button clicked");
     var output = $('#makeAlarm').serialize();
     console.log(output);
 
+    $.post("http://localhost:8080/api/alarms",
+        output,
+        function (data, textStatus) {
+            alert("Response from server: " + data);
+        });
+}
     // var name = $("#al_name").value;
     // var time = document.getElementById("al_time").value;
     // var duration = document.getElementById("al_duration").value;
@@ -42,4 +50,3 @@ console.log("Button clicked");
     // console.log("friday?: "+fri);
     // console.log("saturday?: "+sat);
     // console.log("sunday?: "+sun)
-}

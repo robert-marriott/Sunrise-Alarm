@@ -9,15 +9,13 @@ var alarmSchema = new Schema({
   alarm_time: String,
   alarm_duration: {type: Number, default:30},
   comment: String,
-  repeat: {
-    mon: {type: Boolean, default: false},
-    tue: {type: Boolean, default: false},
-    wed: {type: Boolean, default: false},
-    thu: {type: Boolean, default: false},
-    fri: {type: Boolean, default: false},
-    sat: {type: Boolean, default: false},
-    sny: {type: Boolean, default: false},
-  },
+  mon: {type: Boolean, default: false},
+  tue: {type: Boolean, default: false},
+  wed: {type: Boolean, default: false},
+  thu: {type: Boolean, default: false},
+  fri: {type: Boolean, default: false},
+  sat: {type: Boolean, default: false},
+  sny: {type: Boolean, default: false},
   created_at: Date,
   updated_at: Date
 });
