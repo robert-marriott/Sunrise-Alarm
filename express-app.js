@@ -38,6 +38,7 @@ router.route('/alarms')
     alarm.title = req.body.title;  // set the alarm name (comes from the request (from params (instead of body))
     alarm.creator = req.body.creator;
     alarm.alarm_duration = req.body.alarm_duration;
+    alarm.alarm_time = req.body.alarm_time;
     alarm.comment = req.body.comment;
     alarm.mon = req.body.mon;
     alarm.tue = req.body.tue;
@@ -82,6 +83,7 @@ router.route('/alarms/:alarm_id')
             alarm.title = req.body.title;
             alarm.creator = req.body.creator;
             alarm.alarm_duration = req.body.alarm_duration;
+            alarm.alarm_time = req.body.alarm_time;
             alarm.comment = req.body.comment;
             alarm.mon = req.body.mon;
             alarm.tue = req.body.tue;

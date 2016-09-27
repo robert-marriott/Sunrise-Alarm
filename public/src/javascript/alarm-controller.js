@@ -10,43 +10,22 @@
 $( document ).ready(function() {
     console.log( "document is ready!" );
 
+}); //end of document.ready function
 
-});
-
-
-
-
+/***** Function to gather data from add alarm form and post to database in JS **********/
 function createAlarmFromHTML() {
-    console.log("Button clicked");
-    var output = $('#makeAlarm').serialize();
+    console.log("New Alarm Data Entered");
+    var output = $('#makeAlarm').serialize(); //uses id="" info to harvest from form
     console.log(output);
-
+    //Post to localhost
     $.post("http://localhost:8080/api/alarms",
         output,
         function (data, textStatus) {
             alert("Response from server: " + data);
         });
-}
-    // var name = $("#al_name").value;
-    // var time = document.getElementById("al_time").value;
-    // var duration = document.getElementById("al_duration").value;
-    // var creator = document.getElementById("al_creator").value;
-    // var mon = document.getElementById("weekday-mon").checked;
-    // var tue = document.getElementById("weekday-tue").checked;
-    // var wed = document.getElementById("weekday-wed").checked;
-    // var thu = document.getElementById("weekday-thu").checked;
-    // var fri = document.getElementById("weekday-fri").checked;
-    // var sat = document.getElementById("weekday-sat").checked;
-    // var sun = document.getElementById("weekday-sun").checked;
-    //
-    // console.log("submitter name: "+name);
-    // console.log("submitter time: "+time);
-    // console.log("duration: "+duration);
-    // console.log("creator: "+creator);
-    // console.log("monday?: "+mon);
-    // console.log("tuesday?: "+tue);
-    // console.log("wednesday?: "+wed);
-    // console.log("thursday?: "+thu);
-    // console.log("friday?: "+fri);
-    // console.log("saturday?: "+sat);
-    // console.log("sunday?: "+sun)
+$("#set_alarm").collapse("toggle");
+} //end of createAlarmFromHTML function
+
+
+
+

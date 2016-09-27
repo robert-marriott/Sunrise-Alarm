@@ -57,7 +57,7 @@
                 <a href="#about" onclick=$("#menu-close").click();>About</a>
             </li>
             <li>
-                <a href="#projects" onclick=$("#menu-close").click();>Clock</a>
+                <a href="#services" onclick=$("#menu-close").click();>Clock</a>
             </li>
             <li>
                 <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
@@ -68,11 +68,10 @@
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
-            <h1>Sunrise Alarm Clock</h1>
-            <h3>Wake up on your own terms</h3>
-
-            <br>
-            <a href="#about" class="btn btn-dark btn-lg">More about this app</a>
+            <div class="title-box">
+                <h1>Sunrise Alarm Clock</h1>
+                <h3>Wake up on your own terms</h3>
+            <a href="#about" class="btn btn-dark btn-lg">More about this app</a> <br></div>
         </div>
     </header>
 
@@ -90,117 +89,117 @@
         <!-- /.container -->
     </section>
 
-    <!-- Alarm Functions -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+<!--------------------------- Form Data and Functional Webpage Parts -------------------------->
+
+    <!--------------------------- Accordion for each of the 4 services listed -------------------------->
     <section id="services" class="services bg-primary">
         <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <h2>Alarm Functions</h2>
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
+            <div class="text-center bg-primary">
+                <h2>Alarm Functions</h2>
+                <div class="container" style="margin: 0; width: 100% !important">
+                    <div class="panel-group services" id="accordion">
+                        <div class="panel panel-primary" >
+                            <div class="panel-heading">
+                                <h4 class="panel-title text-center">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-tasks fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Add Alarm</strong>
+                                <i class="fa fa-tasks fa-stack-1x text-primary"></i></span><br>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><strong>Add Alarm</strong></a>
                                 </h4>
-                                <p>Adds an alarm to the attached database.</p>
-                                <a href="#set_alarm" class="btn btn-light" data-toggle="collapse"> - Create - </a>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse">
+                                <div class="panel-body"> <!-- Begin code for alarm addition -->
+                                    <div id="set_alarm" class="form-alarm-entry">
+                                        <h1>Enter Alarm Details<span>Populate the form and send to the database!</span></h1>
+                                        <form name="makeAlarm" id="makeAlarm">
+                                            <div class="section"><span>1</span>Alarm Title &amp; Creator</div>
+                                            <div class="inner-wrap">
+                                                <label>What shall we call this alarm? <input type="text" id="al_name" name="title" /></label>
+                                                <label>Who is creating this alarm? <input type="text" id="al_creator" name="creator" /></label>
+                                            </div>
+
+                                            <div class="section"><span>2</span>Alarm Time &amp; Duration</div>
+                                            <div class="inner-wrap">
+                                                <label>Alarm Time <input type="time" id="al_time" name="alarm_time" /></label>
+                                                <label>Alarm Fade Duration <input type="number" id="al_duration" name="alarm_duration" /></label>
+                                            </div>
+                                            <div class="section"><span>3</span>Repeats</div>
+                                            <div class="inner-wrap">
+                                                <div class="weekDays-selector">
+                                                    <input type="checkbox" id="weekday-sun" class="weekday" name="sun" value="true"/>
+                                                    <label for="weekday-sun">Sun</label>
+                                                    <input type="checkbox" id="weekday-mon" class="weekday" name="mon"  value="true"/>
+                                                    <label for="weekday-mon">Mon</label>
+                                                    <input type="checkbox" id="weekday-tue" class="weekday" name="tue"  value="true"/>
+                                                    <label for="weekday-tue">Tue</label>
+                                                    <input type="checkbox" id="weekday-wed" class="weekday" name="wed"  value="true"/>
+                                                    <label for="weekday-wed">Wed</label>
+                                                    <input type="checkbox" id="weekday-thu" class="weekday" name="thu"  value="true"/>
+                                                    <label for="weekday-thu">Thu</label>
+                                                    <input type="checkbox" id="weekday-fri" class="weekday" name="fri"  value="true"/>
+                                                    <label for="weekday-fri">Fri</label>
+                                                    <input type="checkbox" id="weekday-sat" class="weekday" name="sat"  value="true"/>
+                                                    <label for="weekday-sat">Sat</label>
+                                                </div>
+                                            </div>
+                                            <div class="button-section">
+                                                <button class="btn btn-default btn-primary" type="button" name="MakeAlarm" onclick="createAlarmFromHTML()">Add Alarm!</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div><!-- End code for alarm addition -->
+                        </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title text-center">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-clock-o fa-stack-1x text-primary"></i></span><br>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><strong>Choose Alarm</strong></a>
+                                </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title text-center">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-clock-o fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Choose Alarm</strong>
+                                <i class="fa fa-sun-o fa-stack-1x text-primary"></i></span><br>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><strong>Sunrise Color Scheme</strong></a>
                                 </h4>
-                                <p>Choose from a list of all created "Alarm Scenarios".</p>
-                                <a href="#list_alarms" class="btn btn-light"> - Choose - </a>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse">
+                                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title text-center">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-sun-o fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Choose Color Scheme</strong>
+                                <i class="fa fa-cogs fa-stack-1x text-primary"></i></span><br>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><strong>Manual Control</strong></a>
                                 </h4>
-                                <p>Each alarm can run through a color rotation schema.</p>
-                                <a href="#choose_color" class="btn btn-light">- Decorate -</a>
                             </div>
-                        </div>
-                       <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-cogs fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Manual Control</strong>
-                                </h4>
-                                <p>Robots are scary. This is for manual control. Take the wheel!</p>
-                                <a href="#manual_sunrise" class="btn btn-light"> -   Drive   - </a>
+                            <div id="collapse4" class="panel-collapse collapse">
+                                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                             </div>
                         </div>
                     </div>
-                    <!-- /.row (nested) -->
                 </div>
-                <!-- /.col-lg-10 -->
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.container -->
     </section>
-<!--------------------------- Form Data and Functional Webpage Parts -------------------------->
-<!-- Div for alarm setting, service 1/4. Expands on button click. Bootstrap/CSS/HTML-->
-    <div id="set_alarm" class="form-alarm-entry collapse">
-        <h1>Enter Alarm Details<span>Populate the form and send to the database!</span></h1>
-        <form name="makeAlarm" id="makeAlarm">
-            <div class="section"><span>1</span>Alarm Title &amp; Creator</div>
-            <div class="inner-wrap">
-                <label>What shall we call this alarm? <input type="text" id="al_name" name="title" /></label>
-                <label>Who is creating this alarm? <input type="text" id="al_creator" name="creator" /></label>
-            </div>
-
-            <div class="section"><span>2</span>Alarm Time &amp; Duration</div>
-            <div class="inner-wrap">
-                <label>Alarm Time <input type="time" id="al_time" name="alarm_time" /></label>
-                <label>Alarm Fade Duration <input type="number" id="al_duration" name="alarm_duration" /></label>
-            </div>
-            <div class="section"><span>3</span>Repeats</div>
-            <div class="inner-wrap">
-                <div class="weekDays-selector">
-                    <input type="checkbox" id="weekday-sun" class="weekday" name="sun" value="true"/>
-                    <label for="weekday-sun">Sun</label>
-                    <input type="checkbox" id="weekday-mon" class="weekday" name="mon"  value="true"/>
-                    <label for="weekday-mon">Mon</label>
-                    <input type="checkbox" id="weekday-tue" class="weekday" name="tue"  value="true"/>
-                    <label for="weekday-tue">Tue</label>
-                    <input type="checkbox" id="weekday-wed" class="weekday" name="wed"  value="true"/>
-                    <label for="weekday-wed">Wed</label>
-                    <input type="checkbox" id="weekday-thu" class="weekday" name="thu"  value="true"/>
-                    <label for="weekday-thu">Thu</label>
-                    <input type="checkbox" id="weekday-fri" class="weekday" name="fri"  value="true"/>
-                    <label for="weekday-fri">Fri</label>
-                    <input type="checkbox" id="weekday-sat" class="weekday" name="sat"  value="true"/>
-                    <label for="weekday-sat">Sat</label>
-                </div>
-            </div>
-            <div class="button-section">
-                <button type="button" name="MakeAlarm" onclick="createAlarmFromHTML()">Add Alarm!</button>
-            </div>
-        </form>
-    </div>
-
 <!-- Div for listing all available alarms and choosing one -->
     <div id="list_alarms" class="form-alarm-list"></div>
 
@@ -281,7 +280,7 @@
 
 
     <footer>
-        <div class="container">
+        <div class="container" id="contact">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h4><strong>Robert Marriott</strong>
