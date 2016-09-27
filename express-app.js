@@ -39,7 +39,13 @@ router.route('/alarms')
     alarm.creator = req.body.creator;
     alarm.alarm_duration = req.body.alarm_duration;
     alarm.comment = req.body.comment;
-    alarm.alarm_time = req.body.alarm_time;
+    alarm.mon = req.body.mon;
+    alarm.tue = req.body.tue;
+    alarm.wed = req.body.wed;
+    alarm.thu = req.body.thu;
+    alarm.fri = req.body.fri;
+    alarm.sat = req.body.sat;
+    alarm.sny = req.body.sun;
 
     alarm.save(function(err) {
         if (err)
@@ -73,11 +79,17 @@ router.route('/alarms/:alarm_id')
         Alarm.findById(req.params.alarm_id, function(err, alarm) {
             if (err)
                 res.send(err);
-            alarm.title = req.body.title;  // set the alarm name (comes from the request (from params (instead of body))
+            alarm.title = req.body.title;
             alarm.creator = req.body.creator;
             alarm.alarm_duration = req.body.alarm_duration;
             alarm.comment = req.body.comment;
-            alarm.alarm_time = req.body.alarm_time;  // update the alarm's info
+            alarm.mon = req.body.mon;
+            alarm.tue = req.body.tue;
+            alarm.wed = req.body.wed;
+            alarm.thu = req.body.thu;
+            alarm.fri = req.body.fri;
+            alarm.sat = req.body.sat;
+            alarm.sny = req.body.sun;  // update the alarm's info
             // save the alarm
             alarm.save(function(err) {
                 if (err)
